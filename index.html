@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
     <body>
-        <div class="#container">
-            <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film">
-            <button class="bottoneRicerca" type="button" name="button">Clicca qui</button>
-
+        <div id="container">
+            <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film" v-model="search">
+            <button class="bottoneRicerca" type="button" name="button" @click="Searchfilm()">Clicca qui</button>
         </div>
     <script src="main.js" charset="utf-8"></script>
     </body>

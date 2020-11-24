@@ -1,19 +1,34 @@
 // Milestone 1
 
-var app=new Vue ({
-    el:"#container",
+var app = new Vue ({
+    el:'#container',
     data: {
-
+        elencofilm:[],
+        search: ""
     },
-    mounted(){
+    methods:{
+
+        Searchfilm(){
         axios
-        .get("https://api.themoviedb.org/3/movie/?api_key=610e99fa99f9f0a61db03d2556de6388"),
-            params{
-                title:
-                original_title:
-                original_language:
-                vote_average:
+        .get("https://api.themoviedb.org/3/movie/", {
+            params: {
+                api_key:"610e99fa99f9f0a61db03d2556de6388",
+                query:this.search,
+                // title:"",
+                // original_title:"",
+                // original_language:"",
+                // vote_average:"",
             }
-        .then()
-    })
-})
+        })
+        .then((risposta) => {
+
+            this.elencofilm= risposta.data.results;
+            console.log(this.elencofilm);
+
+        });
+
+    }//chiudo methods
+
+}
+
+}) //chiudo Vue
