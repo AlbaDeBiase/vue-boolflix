@@ -12,6 +12,12 @@
         <div id="container">
             <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film" v-model="search">
             <button class="bottoneRicerca" type="button" name="button" @click="Searchfilm()">Clicca qui</button>
+            <div class="elenco-film" v-for="(film,index) in elencofilm">
+                <p>{{film.title}}</p>
+                <p>{{film.original_title}}</p>
+                <p>{{film.original_language}}</p>
+                <p>{{film.vote_average}}</p>
+            </div>
         </div>
     <script src="main.js" charset="utf-8"></script>
     </body>
