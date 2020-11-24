@@ -1,12 +1,19 @@
 .barraRicerca {
     padding: 10px;
-    width: 50%;
+    width:80%;
+    margin-top:20px;
+    margin-left:10px;
+    border-radius: 5px;
     }
-}
 
-.bottoneRicerca {
-    width: 50%;
-    padding: 18px;
+
+#bottoneRicerca {
+    width: 10%;
+    padding: 10px;
+    border-radius: 5px;
+}
+#bottoneRicerca:hover{
+    background-color:  #64bdbd;
 }
 
 #container{
@@ -23,7 +30,6 @@
 }
 
 .elencoFilm, .elencoSerie{
-    background-color: pink;
     margin:15px;
     border-radius: 5%;
     background-color: #64bdbd;
@@ -46,4 +52,21 @@
     font-size: 16px;
     text-align: center;
     font-family: arial;
+}
+
+.notFound{
+    margin:15px;
+    border-radius: 5%;
+    background-color: pink;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.notFound h1{
+    font-size: 30px;
+    font-family: arial;
+    font-weight: bold;
+    align-self: center;
 }

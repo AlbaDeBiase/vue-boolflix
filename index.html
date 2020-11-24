@@ -11,9 +11,10 @@
     <body>
         <div id="container">
             <div class="headerSearch">
-                <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film" @keyup="Searchfilm"v-model="search">
-                <button class="bottoneRicerca" type="button" name="button" @click="Searchfilm()">Clicca qui</button>
+                <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film e serie tv" @keyup="Searchfilm"v-model="search">
+                <button id="bottoneRicerca" type="button" name="bottoneRicerca" @click="Searchfilm()">Clicca qui</button>
             </div>
+
             <div class="elencoFilm" v-for="(film,index) in elencofilm" >
                 <p class="title-section">Titolo del film</p>
                 <p class="description-section">{{film.title}}</p>
@@ -33,6 +34,9 @@
                 <p class="description-section">{{serie.original_language}}</p>
                 <p class="title-section">Voto</p>
                 <p class="description-section">{{serie.vote_average}}</p>
+            </div>
+            <div class="notFound" v-if="notFound == true">
+                <h1>Not Found</h1>
             </div>
         </div>
     <script src="main.js" charset="utf-8"></script>

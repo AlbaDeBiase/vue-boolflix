@@ -12,7 +12,8 @@ var app = new Vue ({
         elencofilm:[],
         elencoSerie:[],
         elencoTot:[],
-        search: ""
+        search: "",
+        notFound:false
 
     },
     methods:{
@@ -31,6 +32,10 @@ var app = new Vue ({
             //cerco i film nella sezione film
             this.elencofilm= film.data.results;
             // console.log(this.elencofilm);
+            this.elencofilm.forEach((film) => {
+                //sostituire il voto numerico su base 10 in un voto su base 5
+                film.vote_average = Math.round(film.vote_average / 2);
+       });
 
         })
         axios
@@ -45,19 +50,29 @@ var app = new Vue ({
                 //cerco i film nella sezione serie
                 this.elencoSerie= (serie.data.results);
                 console.log(this.elencoSerie);
+                this.elencoSerie.forEach((serie) => {
+                // sostituire il voto numerico su base 10 in un voto su base 5
+                serie.vote_average = Math.round(serie.vote_average / 2);
+       });
 
                 //unisco i 2 array
                 this.elencoTot=Array.prototype.push.apply(this.elencoSerie,this.elencofilm);
 
                 console.log(this.elencoTot);
-                });
+
+                // Se la mia ricerca non produce risultato visualizzo notFound
+                if (this.elencofilm.length == 0) {
+                    this.notFound = true;
+
+                }
+
+            });
+
             //svuoto la search
             // this.search=""
-            // if (this.elencoFilm.length = 0) {
-            //     this.noFilm = true;
-            //
-            // }
-        },
+
+
+        }
 
     }//chiudo methods
 
