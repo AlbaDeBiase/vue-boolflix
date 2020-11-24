@@ -11,6 +11,7 @@ var app = new Vue ({
     data: {
         elencofilm:[],
         elencoSerie:[],
+        elencoTot:[],
         search: ""
 
     },
@@ -26,12 +27,13 @@ var app = new Vue ({
 
             }
         })
-        .then((risposta) => {
+        .then((film) => {
             //cerco i film nella sezione film
-            this.elencofilm= risposta.data.results;
+            this.elencofilm= film.data.results;
             // console.log(this.elencofilm);
 
-            })
+        })
+        axios
             .get("https://api.themoviedb.org/3/search/tv", {
                 params: {
                     api_key:"610e99fa99f9f0a61db03d2556de6388",
@@ -39,13 +41,15 @@ var app = new Vue ({
 
                 }
             })
-            .then((risposta) => {
+            .then((serie) => {
                 //cerco i film nella sezione serie
-
-                this.elencoSerie= risposta.data.results;
+                this.elencoSerie= (serie.data.results);
                 console.log(this.elencoSerie);
 
                 //unisco i 2 array
+                this.elencoTot=Array.prototype.push.apply(this.elencoSerie,this.elencofilm);
+
+                console.log(this.elencoTot);
                 });
             //svuoto la search
             // this.search=""
@@ -53,7 +57,7 @@ var app = new Vue ({
             //     this.noFilm = true;
             //
             // }
-        }
+        },
 
     }//chiudo methods
 

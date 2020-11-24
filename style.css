@@ -22,7 +22,7 @@
     align-self: center;
 }
 
-.elencoFilm{
+.elencoFilm, .elencoSerie{
     background-color: pink;
     margin:15px;
     border-radius: 5%;
