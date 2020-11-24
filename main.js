@@ -10,7 +10,7 @@ var app = new Vue ({
 
         Searchfilm(){
         axios
-        .get("https://api.themoviedb.org/3/movie/", {
+        .get("https://api.themoviedb.org/3/search/movie", {
             params: {
                 api_key:"610e99fa99f9f0a61db03d2556de6388",
                 query:this.search,
@@ -25,10 +25,10 @@ var app = new Vue ({
             this.elencofilm= risposta.data.results;
             console.log(this.elencofilm);
 
-        });
+            });
+
+        }
 
     }//chiudo methods
-
-}
 
 }) //chiudo Vue
