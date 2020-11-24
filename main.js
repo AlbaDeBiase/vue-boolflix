@@ -7,9 +7,12 @@ var app=new Vue ({
     },
     mounted(){
         axios
-        .get("https://api.themoviedb.org/3/movie/550?api_key=610e99fa99f9f0a61db03d2556de6388")
+        .get("https://api.themoviedb.org/3/movie/?api_key=610e99fa99f9f0a61db03d2556de6388"),
             params{
-
+                title:
+                original_title:
+                original_language:
+                vote_average:
             }
         .then()
     })
