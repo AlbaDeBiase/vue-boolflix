@@ -7,7 +7,7 @@
 //  Ad esempio, se il voto è 8.2, dobbiamo visualizzare 4 stelline piene e 1 stellina vuota (in totale sempre 5)
 
 var app = new Vue ({
-    el:'#container',
+    el:'#row',
     data: {
         elencofilm:[],
         elencoSerie:[],
