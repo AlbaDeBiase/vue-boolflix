@@ -13,7 +13,8 @@ var app = new Vue ({
         elencoSerie:[],
         elencoTot:[],
         search: "",
-        notFound:false
+        notFound:false,
+        flags: ['de','it','en','es','fr','ru','ja']
 
     },
     methods:{
@@ -84,7 +85,22 @@ var app = new Vue ({
             //??
 
             return Math.floor(voteAverage / 2);
-        }
+        },
+
+        // funzione per sotituire con una mia immagine, la bandiera che non è compresa nella mia carrtella
+        // flagsInvible() {
+        //
+        //     this.elencoSerie.forEach((serie, i) => {
+        //         if (serie.original_language).includes("/flags.png") {
+        //             serie.original_language=true;
+        //         }else {
+        //             serie.original_language="flags/null.png"
+        //         }
+        //
+        //     });
+        //
+        // },
+
 
     }//chiudo methods
 

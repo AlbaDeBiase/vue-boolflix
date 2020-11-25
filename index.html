@@ -12,7 +12,7 @@
     <body>
         <div id="container">
             <div class="headerSearch">
-                <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film e serie tv" @keyup.enter="Searchfilm"v-model="search">
+                <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film e serie tv" @keyup.enter="Searchfilm" v-model="search">
                 <button id="bottoneRicerca" type="button" name="bottoneRicerca" @click="Searchfilm()">Clicca qui</button>
             </div>
 
@@ -23,7 +23,12 @@
                 <p class="description-section">{{film.original_title}}</p>
                 <p class="title-section">Lingua originale</p>
                 <!-- <p class="description-section">{{film.original_language}}</p> -->
-                <p class="flags"><img  :src="'flags/' + film.original_language + '.png'" :alt="film.original_language"></p>
+                <p class="flags">
+                    <img  :src="'flags/' + film.original_language + '.png'" :alt="film.original_language"
+                    v-if="flags.includes(film.original_language)">
+                    <p v-else>{{ film.original_language }}</p>
+                    <!-- <p v-else-if=""></p> -->
+                </p>
                 <p class="title-section">Voto</p>
                 <!-- <p class="description-section">{{film.vote_average}}</p> -->
                     <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)">{{i}}</i>
@@ -37,7 +42,11 @@
                 <p class="description-section">{{serie.original_name}}</p>
                 <p class="title-section">Lingua originale</p>
                 <!-- <p class="description-section">{{serie.original_language}}</p> -->
-                <p class="flags"><img :src="'flags/' + serie.original_language + '.png'" :alt="serie.original_language"></p> 
+                <p class="flags">
+                    <img :src="'flags/' + serie.original_language + '.png'"  :alt="serie.original_language"
+                    v-if="flags.includes(serie.original_language)">
+                    <p v-else>{{ serie.original_language }}</p>
+                </p>
                 <p class="title-section">Voto</p>
                 <!-- <p class="description-section">{{serie.vote_average}}</p> -->
                 <p class="stars"><i class="fas fa-star" v-for="i in getStars(serie.vote_average)">{{i}}</i>
