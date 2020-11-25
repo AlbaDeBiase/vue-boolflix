@@ -33,7 +33,7 @@
     margin:15px;
     border-radius: 5%;
     background-color: #64bdbd;
-    width: 16%;
+    max-width: 16%;
 
 }
 
@@ -78,4 +78,14 @@ text-align: center;
 
 .stars i{
     color:yellow;
+}
+
+.flags img{
+    width: 60px;
+
+
+}
+
+.flags {
+    text-align: center;
 }

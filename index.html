@@ -23,9 +23,9 @@
                 <p class="description-section">{{film.original_title}}</p>
                 <p class="title-section">Lingua originale</p>
                 <!-- <p class="description-section">{{film.original_language}}</p> -->
-                <img :src="'flags/' + film.original_language + '.png'" :alt="film.original_language">
+                <p class="flags"><img  :src="'flags/' + film.original_language + '.png'" :alt="film.original_language"></p>
                 <p class="title-section">Voto</p>
-                <p class="description-section">{{film.vote_average}}</p>
+                <!-- <p class="description-section">{{film.vote_average}}</p> -->
                     <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)">{{i}}</i>
                     <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))">{{i}}</i></p>
 
@@ -36,9 +36,10 @@
                 <p class="title-section">Titolo originale della serie</p>
                 <p class="description-section">{{serie.original_name}}</p>
                 <p class="title-section">Lingua originale</p>
-                <p class="description-section">{{serie.original_language}}</p>
+                <!-- <p class="description-section">{{serie.original_language}}</p> -->
+                <p class="flags"><img :src="'flags/' + serie.original_language + '.png'" :alt="serie.original_language"></p> 
                 <p class="title-section">Voto</p>
-                <p class="description-section">{{serie.vote_average}}</p>
+                <!-- <p class="description-section">{{serie.vote_average}}</p> -->
                 <p class="stars"><i class="fas fa-star" v-for="i in getStars(serie.vote_average)">{{i}}</i>
                 <i class="far fa-star" v-for="i in (5 - getStars(serie.vote_average))">{{i}}</i></p>
             </div>
