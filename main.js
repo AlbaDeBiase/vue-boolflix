@@ -32,10 +32,10 @@ var app = new Vue ({
                 //cerco i film nella sezione film
                 this.elencofilm= film.data.results;
                 // console.log(this.elencofilm);
-                this.elencofilm.forEach((film) => {
-                    //sostituire il voto numerico su base 10 in un voto su base 5
-                    film.vote_average = Math.round(film.vote_average / 2);
-           });
+           //      this.elencofilm.forEach((film) => {
+           //          //sostituire il voto numerico su base 10 in un voto su base 5
+           //          film.vote_average = Math.round(film.vote_average / 2);
+           // });
 
             })
             axios
@@ -74,9 +74,6 @@ var app = new Vue ({
 
                 //svuoto la search
                 // this.search=""
-
-
-
 
         },
         getStars(voteAverage) {

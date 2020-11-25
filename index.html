@@ -25,6 +25,9 @@
                 <p class="description-section">{{film.original_language}}</p>
                 <p class="title-section">Voto</p>
                 <p class="description-section">{{film.vote_average}}</p>
+                    <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)">{{i}}</i>
+                    <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))">{{i}}</i></p>
+
             </div>
             <div class="elencoSerie" v-for="(serie,index) in elencoSerie" >
                 <p class="title-section">Titolo della serie</p>
@@ -34,8 +37,8 @@
                 <p class="title-section">Lingua originale</p>
                 <p class="description-section">{{serie.original_language}}</p>
                 <p class="title-section">Voto</p>
-                <p class="description-section">{{serie.vote_average}}
-                <i class="fas fa-star" v-for="i in getStars(serie.vote_average)">{{i}}</i></p>
+                <p class="description-section">{{serie.vote_average}}</p>
+                <p class="stars"><i class="fas fa-star" v-for="i in getStars(serie.vote_average)">{{i}}</i>
                 <i class="far fa-star" v-for="i in (5 - getStars(serie.vote_average))">{{i}}</i></p>
             </div>
             <div class="notFound" v-if="notFound == true">

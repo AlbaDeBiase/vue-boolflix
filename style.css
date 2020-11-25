@@ -70,3 +70,12 @@
     font-weight: bold;
     align-self: center;
 }
+
+.stars{
+text-align: center;
+
+}
+
+.stars i{
+    color:yellow;
+}
