@@ -20,58 +20,73 @@ var app = new Vue ({
 
         //funzione di ricerca
         Searchfilm(){
-        axios
-        .get("https://api.themoviedb.org/3/search/movie", {
-            params: {
-                api_key:"610e99fa99f9f0a61db03d2556de6388",
-                query:this.search,
-
-            }
-        })
-        .then((film) => {
-            //cerco i film nella sezione film
-            this.elencofilm= film.data.results;
-            // console.log(this.elencofilm);
-            this.elencofilm.forEach((film) => {
-                //sostituire il voto numerico su base 10 in un voto su base 5
-                film.vote_average = Math.round(film.vote_average / 2);
-       });
-
-        })
-        axios
-            .get("https://api.themoviedb.org/3/search/tv", {
+            axios
+            .get("https://api.themoviedb.org/3/search/movie", {
                 params: {
                     api_key:"610e99fa99f9f0a61db03d2556de6388",
                     query:this.search,
 
                 }
             })
-            .then((serie) => {
-                //cerco i film nella sezione serie
-                this.elencoSerie= (serie.data.results);
-                console.log(this.elencoSerie);
-                this.elencoSerie.forEach((serie) => {
-                // sostituire il voto numerico su base 10 in un voto su base 5
-                serie.vote_average = Math.round(serie.vote_average / 2);
-       });
+            .then((film) => {
+                //cerco i film nella sezione film
+                this.elencofilm= film.data.results;
+                // console.log(this.elencofilm);
+                this.elencofilm.forEach((film) => {
+                    //sostituire il voto numerico su base 10 in un voto su base 5
+                    film.vote_average = Math.round(film.vote_average / 2);
+           });
 
-                //unisco i 2 array
-                this.elencoTot=Array.prototype.push.apply(this.elencoSerie,this.elencofilm);
+            })
+            axios
+                .get("https://api.themoviedb.org/3/search/tv", {
+                    params: {
+                        api_key:"610e99fa99f9f0a61db03d2556de6388",
+                        query:this.search,
 
-                console.log(this.elencoTot);
+                    }
+                })
+                .then((serie) => {
+                    //cerco i film nella sezione serie
+                    this.elencoSerie= (serie.data.results);
+                    console.log(this.elencoSerie);
 
-                // Se la mia ricerca non produce risultato visualizzo notFound
-                if (this.elencofilm.length == 0) {
-                    this.notFound = true;
+                    /*
+                    this.elencoSerie.forEach((serie) => {
 
-                }
+                        // sostituire il voto numerico su base 10 in un voto su base 5
+                        serie.vote_average = Math.round(serie.vote_average / 2);
+                   });
+                   */
 
-            });
+                    //unisco i 2 array
+                    this.elencoTot=Array.prototype.push.apply(this.elencoSerie,this.elencofilm);
 
-            //svuoto la search
-            // this.search=""
+                    console.log(this.elencoTot);
+
+                    // Se la mia ricerca non produce risultato visualizzo notFound
+                    if (this.elencofilm.length == 0) {
+                        this.notFound = true;
+
+                    }
+
+                    });
+
+                //svuoto la search
+                // this.search=""
 
 
+
+
+        },
+        getStars(voteAverage) {
+
+            // INPUT 9.5
+            // output 4
+
+            //??
+
+            return Math.floor(voteAverage / 2);
         }
 
     }//chiudo methods
