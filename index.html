@@ -20,11 +20,10 @@
                 <h1 v-if="ricercaIncorso">
                       Ricerca in corso...
                 </h1>
-
                 <h2 v-else-if="testoTitolo && elencoTot.length">
                     Risultati della ricerca per:"{{testoTitolo}}"
                 </h2>
-                <h3 v-elese-if="testoTitolo">nessun risultato</h3>
+                <h3 v-else-if="testoTitolo">nessun risultato: "{{ testo_titolo }}"</h3>
                 <div class="elencoFilm" v-for="(film,index) in elencofilm" >
                     <p class="title-section">Titolo del film</p>
                     <p class="description-section">{{film.title}}</p>
@@ -35,7 +34,7 @@
                     <p class="flags">
                         <img  :src="'flags/' + film.original_language + '.png'" :alt="film.original_language"
                         v-if="flags.includes(film.original_language)">
-                        <p v-else>{{ film.original_language}}</p>
+                        <span v-else>{{ film.original_language}}</span>
                         <!-- <p v-else-if=""></p> -->
                     </p>
                     <p class="title-section">Voto</p>
@@ -56,7 +55,7 @@
                     <p class="flags">
                         <img :src="'flags/' + serie.original_language + '.png'"  :alt="serie.original_language"
                         v-if="flags.includes(serie.original_language)">
-                        <p v-else>{{ serie.original_language }}</p>
+                        <span v-else>{{ serie.original_language }}</span>
                     </p>
                     <p class="title-section">Voto</p>
                     <!-- <p class="description-section">{{serie.vote_average}}</p> -->
