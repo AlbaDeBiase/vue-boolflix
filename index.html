@@ -17,14 +17,17 @@
                     <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film e serie tv" @keyup.enter="Searchfilm" v-model="search">
                     <button id="bottoneRicerca" type="button" name="bottoneRicerca" @click="Searchfilm()">Clicca qui</button>
                 </div>
-                <h1 v-if="ricercaIncorso">
-                      Ricerca in corso...
-                </h1>
-                <h2 v-else-if="testoTitolo && elencofilm.length && elencoSerie.length" >
-                    Risultati della ricerca per:"{{testoTitolo}}"
-                </h2>
-                <h3 v-else-if="testoTitolo">nessun risultato: "{{testoTitolo}}"
-                </h3>
+                <div class="controlliRicerca">
+                    <h1 id="ricercaHeader" v-if="ricercaIncorso">
+                          Ricerca in corso...
+                    </h1>
+                    <h2 v-else-if="testoTitolo && elencofilm.length && elencoSerie.length" >
+                        Risultati della ricerca per:"{{testoTitolo}}"
+                    </h2>
+                    <h3 v-else-if="testoTitolo">nessun risultato: "{{testoTitolo}}"
+                    </h3>
+                </div>
+
                 <div class="elencoFilm" v-for="(film,index) in elencofilm" >
                     <img class="poster" v-if="film.poster_path"  :src="urlBasePoster + 'w342' + film.poster_path" alt="immagine non trovata">
                     <img class="poster" v-else :src="immagine" alt="">
@@ -43,7 +46,8 @@
                     <p class="title-section">Voto</p>
                     <!-- <p class="description-section">{{film.vote_average}}</p> -->
                         <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)"></i>
-                        <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))"></i></p>
+                            <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))"></i></p>
+                        <p class="overview">{{film.overview}}</p>
 
                 </div>
 
@@ -64,7 +68,8 @@
                     <p class="title-section">Voto</p>
                     <!-- <p class="description-section">{{serie.vote_average}}</p> -->
                     <p class="stars"><i class="fas fa-star" v-for="i in getStars(serie.vote_average)"></i>
-                    <i class="far fa-star" v-for="i in (5 - getStars(serie.vote_average))"></i></p>
+                        <i class="far fa-star" v-for="i in (5 - getStars(serie.vote_average))"></i></p>
+                        <p class="overview">{{serie.overview}}</p>
                 </div>
                 <!-- <div class="notFound" v-if="notFound == true">
                     <h1>Not Found</h1> -->

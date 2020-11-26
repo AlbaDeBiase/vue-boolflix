@@ -8,7 +8,7 @@
     }
 
 #bottoneRicerca {
-    width: 10%;
+    /* width: 10%; */
     padding: 10px;
     border-radius: 5px;
     background-color: red;
@@ -31,19 +31,19 @@
 }
 
 .headerSearch {
-    width: 100%;
+    /* width: 100%; */
     align-self: center;
 }
 
 .headerSearch h1{
     display: inline;
     font-weight: bold;
-    color:red
+    color:red;
 }
 
 .elencoFilm, .elencoSerie{
     margin:5px;
-    max-width: 200px;
+    width: 200px;
     border-radius: 2%;
     background-color: black;
     color:#ffffff99;
@@ -94,7 +94,7 @@ text-align: center;
 }
 
 .flags img{
-    width: 60px;
+    width: 40px;
 
 
 }
@@ -104,7 +104,24 @@ text-align: center;
 }
 
 .poster{
-    width: 200px;
     border-radius: 2%;
+    width: 200px;
 
+}
+
+#ricercaHeader {
+    text-align: center;
+}
+
+.controlliRicerca{
+    width: 100%;
+    text-align: center;
+}
+
+.description-section {
+    opacity:0;
+}
+
+.description-section:hover {
+    opacity:1;
 }
