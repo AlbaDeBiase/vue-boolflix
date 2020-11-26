@@ -13,17 +13,24 @@
         <div id="row">
             <div id="container">
                 <div class="headerSearch">
-                    <h1>Boolflix</h1>
+                    <img id="logo" src="https://assets.brand.microsites.netflix.io/assets/1ed15bca-b389-11e7-9274-06c476b5c346_cm_800w.png?v=24" alt="">
+                    <ul class="navbar-header">
+                        <li>Home</li>
+                        <li>Serie TV</li>
+                        <li>Film</li>
+                        <li>Nuovi e popolari</li>
+                        <li>La mia lista</li>
+                    </ul>
                     <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film e serie tv" @keyup.enter="Searchfilm" v-model="search">
                     <button id="bottoneRicerca" type="button" name="bottoneRicerca" @click="Searchfilm()">Clicca qui</button>
                 </div>
                 <div class="controlliRicerca">
-                    <h1 id="ricercaHeader" v-if="ricercaIncorso">
+                    <h3 id="ricercaHeader" v-if="ricercaIncorso">
                           Ricerca in corso...
-                    </h1>
-                    <h2 v-else-if="testoTitolo && elencofilm.length && elencoSerie.length" >
+                    </h3>
+                    <h3 v-else-if="testoTitolo && elencofilm.length && elencoSerie.length" >
                         Risultati della ricerca per:"{{testoTitolo}}"
-                    </h2>
+                    </h3>
                     <h3 v-else-if="testoTitolo">nessun risultato: "{{testoTitolo}}"
                     </h3>
                 </div>
@@ -73,8 +80,8 @@
                 </div>
                 <!-- <div class="notFound" v-if="notFound == true">
                     <h1>Not Found</h1> -->
-                </div>
             </div>
+
         </div>
     <script src="main.js" charset="utf-8"></script>
     </body>

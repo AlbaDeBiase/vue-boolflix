@@ -1,25 +1,6 @@
-.barraRicerca {
-    padding: 10px;
-    margin-top:20px;
-    margin-left:10px;
-    border-radius: 5px;
-    background-color: black;
-    color:white;
-    }
-
-#bottoneRicerca {
-    /* width: 10%; */
-    padding: 10px;
-    border-radius: 5px;
-    background-color: red;
-}
-#bottoneRicerca:hover{
-    background-color: red;
-}
-
 #row{
     min-height: 100vh;
-    background-color: #00000099;
+    background-color:  #241f1c;
 
 }
 
@@ -31,14 +12,68 @@
 }
 
 .headerSearch {
-    /* width: 100%; */
-    align-self: center;
+    width: 100%;
+    height: 80px;
+    background-color: #241f1c;
+
+
 }
 
-.headerSearch h1{
+#logo{
+    width:150px;
+
+
+}
+
+.navbar-header {
+    list-style-type: none;
     display: inline;
-    font-weight: bold;
-    color:red;
+
+}
+
+.navbar-header li{
+    display:inline;
+    color:white;
+    padding: 5px;
+
+}
+
+.navbar-header li:hover{
+    opacity:0.5;
+    transition: 1s;
+}
+
+.barraRicerca {
+    padding: 10px;
+    margin-top:20px;
+    margin-left:10px;
+    border-radius: 5px;
+    background-color: #241f1c;
+    color:white;
+
+
+    }
+
+#bottoneRicerca {
+    /* width: 10%; */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: red;
+
+
+}
+#bottoneRicerca:hover{
+    background-color: red;
+
+}
+.controlliRicerca{
+    color: white;
+
+}
+
+.controlliRicerca h3 {
+    padding: 5px;
+    font-size: 20px;
 }
 
 .elencoFilm, .elencoSerie{
