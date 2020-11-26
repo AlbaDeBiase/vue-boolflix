@@ -17,7 +17,14 @@
                     <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film e serie tv" @keyup.enter="Searchfilm" v-model="search">
                     <button id="bottoneRicerca" type="button" name="bottoneRicerca" @click="Searchfilm()">Clicca qui</button>
                 </div>
+                <h1 v-if="ricercaIncorso">
+                      Ricerca in corso...
+                </h1>
 
+                <h2 v-else-if="testoTitolo && elencoTot.length">
+                    Risultati della ricerca per:"{{testoTitolo}}"
+                </h2>
+                <h3 v-elese-if="testoTitolo">nessun risultato</h3>
                 <div class="elencoFilm" v-for="(film,index) in elencofilm" >
                     <p class="title-section">Titolo del film</p>
                     <p class="description-section">{{film.title}}</p>
@@ -28,16 +35,18 @@
                     <p class="flags">
                         <img  :src="'flags/' + film.original_language + '.png'" :alt="film.original_language"
                         v-if="flags.includes(film.original_language)">
-                        <p v-else>{{ film.original_language }}</p>
+                        <p v-else>{{ film.original_language}}</p>
                         <!-- <p v-else-if=""></p> -->
                     </p>
                     <p class="title-section">Voto</p>
-                    <!-- <p class="description-section">{{film.vote_average}}</p> -->
-                        <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)">{{i}}</i>
-                        <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))">{{i}}</i></p>
+                    <p class="description-section">{{film.vote_average}}</p>
+                        <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)"></i>
+                        <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))"></i></p>
 
                 </div>
+
                 <div class="elencoSerie" v-for="(serie,index) in elencoSerie" >
+                    <!-- <img :src="'https://image.tmdb.org/t/p/​' + 'w342' + 'poster_path'" alt=""> -->
                     <p class="title-section">Titolo della serie</p>
                     <p class="description-section">{{serie.name}}</p>
                     <p class="title-section">Titolo originale della serie</p>
@@ -51,11 +60,11 @@
                     </p>
                     <p class="title-section">Voto</p>
                     <!-- <p class="description-section">{{serie.vote_average}}</p> -->
-                    <p class="stars"><i class="fas fa-star" v-for="i in getStars(serie.vote_average)">{{i}}</i>
-                    <i class="far fa-star" v-for="i in (5 - getStars(serie.vote_average))">{{i}}</i></p>
+                    <p class="stars"><i class="fas fa-star" v-for="i in getStars(serie.vote_average)"></i>
+                    <i class="far fa-star" v-for="i in (5 - getStars(serie.vote_average))"></i></p>
                 </div>
-                <div class="notFound" v-if="notFound == true">
-                    <h1>Not Found</h1>
+                <!-- <div class="notFound" v-if="notFound == true">
+                    <h1>Not Found</h1> -->
                 </div>
             </div>
         </div>

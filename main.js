@@ -13,7 +13,9 @@ var app = new Vue ({
         elencoSerie:[],
         elencoTot:[],
         search: "",
-        notFound:false,
+        testoTitolo:"",
+        ricercaIncorso:false,
+        // notFound:false,
         flags: ['de','it','en','es','fr','ru','ja']
 
     },
@@ -21,29 +23,39 @@ var app = new Vue ({
 
         //funzione di ricerca
         Searchfilm(){
+            // verifico che l'utente non abbia premuto invio con spazio vuoto
+            if(this.search.trim() != '') {
+                this.ricercaIncorso=true;
+                // svuoto la pagina(array e input)
+                this.elencoTot="";
+                // imposto una variabile che corrisponde al testo scritto dall'utente
+                let testoUtente = this.search;
+                this.search=testoUtente;
+                // inserisco il testo ricercato nel titolo
+                this.testoTitolo=testoUtente;
+
+                // parte la chiamata
             axios
             .get("https://api.themoviedb.org/3/search/movie", {
                 params: {
                     api_key:"610e99fa99f9f0a61db03d2556de6388",
-                    query:this.search,
+                    query:testoUtente
 
                 }
             })
             .then((film) => {
                 //cerco i film nella sezione film
                 this.elencofilm= film.data.results;
-                // console.log(this.elencofilm);
-           //      this.elencofilm.forEach((film) => {
-           //          //sostituire il voto numerico su base 10 in un voto su base 5
-           //          film.vote_average = Math.round(film.vote_average / 2);
-           // });
+                console.log(this.elencofilm);
+                this.ricercaIncorso=false;
+
 
             })
             axios
                 .get("https://api.themoviedb.org/3/search/tv", {
                     params: {
                         api_key:"610e99fa99f9f0a61db03d2556de6388",
-                        query:this.search,
+                        query:testoUtente
 
                     }
                 })
@@ -51,6 +63,8 @@ var app = new Vue ({
                     //cerco i film nella sezione serie
                     this.elencoSerie= (serie.data.results);
                     console.log(this.elencoSerie);
+                    this.ricercaIncorso=false;
+
 
                     /*
                     this.elencoSerie.forEach((serie) => {
@@ -71,35 +85,22 @@ var app = new Vue ({
 
                     }
 
-                    });
+                   });
 
-                //svuoto la search
-                // this.search=""
+            }
 
         },
-        getStars(voteAverage) {
+
+        // passo un parametro x(vote) alla funzione per replicare le stelle
+        getStars(vote) {
 
             // INPUT 9.5
             // output 4
 
             //??
 
-            return Math.floor(voteAverage / 2);
+            return Math.floor(vote/ 2);
         },
-
-        // funzione per sotituire con una mia immagine, la bandiera che non è compresa nella mia carrtella
-        // flagsInvible() {
-        //
-        //     this.elencoSerie.forEach((serie, i) => {
-        //         if (serie.original_language).includes("/flags.png") {
-        //             serie.original_language=true;
-        //         }else {
-        //             serie.original_language="flags/null.png"
-        //         }
-        //
-        //     });
-        //
-        // },
 
 
     }//chiudo methods
