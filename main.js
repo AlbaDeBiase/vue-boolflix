@@ -15,7 +15,7 @@ var app = new Vue ({
         search: "",
         testoTitolo:"",
         ricercaIncorso:false,
-        // notFound:false,
+        urlBasePoster: "https://image.tmdb.org/t/p/",
         flags: ['de','it','en','es','fr','ru','ja']
 
     },
