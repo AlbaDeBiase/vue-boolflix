@@ -16,7 +16,8 @@ var app = new Vue ({
         testoTitolo:"",
         ricercaIncorso:false,
         urlBasePoster: "https://image.tmdb.org/t/p/",
-        flags: ['de','it','en','es','fr','ru','ja']
+        flags: ['de','it','en','es','fr','ru','ja'],
+        immagine: "https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg"
 
     },
     methods:{
@@ -65,14 +66,6 @@ var app = new Vue ({
                     console.log(this.elencoSerie);
                     this.ricercaIncorso=false;
 
-
-                    /*
-                    this.elencoSerie.forEach((serie) => {
-
-                        // sostituire il voto numerico su base 10 in un voto su base 5
-                        serie.vote_average = Math.round(serie.vote_average / 2);
-                   });
-                   */
 
                     //unisco i 2 array
                     this.elencoTot=Array.prototype.push.apply(this.elencoSerie,this.elencofilm);

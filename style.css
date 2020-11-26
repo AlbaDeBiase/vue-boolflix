@@ -27,7 +27,6 @@
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
 
 }
 
@@ -43,11 +42,11 @@
 }
 
 .elencoFilm, .elencoSerie{
-    margin:15px;
-    border-radius: 5%;
+    margin:5px;
+    max-width: 200px;
+    border-radius: 2%;
     background-color: black;
     color:#ffffff99;
-    max-width: 16%;
 
 }
 
@@ -102,4 +101,10 @@ text-align: center;
 
 .flags {
     text-align: center;
+}
+
+.poster{
+    width: 200px;
+    border-radius: 2%;
+
 }

@@ -20,12 +20,14 @@
                 <h1 v-if="ricercaIncorso">
                       Ricerca in corso...
                 </h1>
-                <h2 v-else-if="testoTitolo && elencoTot.length">
+                <h2 v-else-if="testoTitolo && elencofilm.length && elencoSerie.length" >
                     Risultati della ricerca per:"{{testoTitolo}}"
                 </h2>
-                <h3 v-else-if="testoTitolo">nessun risultato: "{{ testoTitolo }}"</h3>
+                <h3 v-else-if="testoTitolo">nessun risultato: "{{testoTitolo}}"
+                </h3>
                 <div class="elencoFilm" v-for="(film,index) in elencofilm" >
-                    <img :src="urlBasePoster + 'w342' + film.poster_path" alt="immagine">
+                    <img class="poster" v-if="film.poster_path"  :src="urlBasePoster + 'w342' + film.poster_path" alt="immagine non trovata">
+                    <img class="poster" v-else :src="immagine" alt="">
                     <p class="title-section">Titolo del film</p>
                     <p class="description-section">{{film.title}}</p>
                     <p class="title-section">Titolo originale del film</p>
@@ -46,7 +48,8 @@
                 </div>
 
                 <div class="elencoSerie" v-for="(serie,index) in elencoSerie" >
-                    <img :src="urlBasePoster + 'w342' + serie.poster_path" alt="immagine">
+                    <img class="poster" v-if="serie.poster_path" :src="urlBasePoster + 'w342' + serie.poster_path" alt="">
+                    <img class="poster" v-else :src="immagine" alt="">
                     <p class="title-section">Titolo della serie</p>
                     <p class="description-section">{{serie.name}}</p>
                     <p class="title-section">Titolo originale della serie</p>
