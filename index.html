@@ -23,7 +23,7 @@
                 <h2 v-else-if="testoTitolo && elencoTot.length">
                     Risultati della ricerca per:"{{testoTitolo}}"
                 </h2>
-                <h3 v-else-if="testoTitolo">nessun risultato: "{{ testo_titolo }}"</h3>
+                <h3 v-else-if="testoTitolo">nessun risultato: "{{ testoTitolo }}"</h3>
                 <div class="elencoFilm" v-for="(film,index) in elencofilm" >
                     <p class="title-section">Titolo del film</p>
                     <p class="description-section">{{film.title}}</p>
@@ -38,7 +38,7 @@
                         <!-- <p v-else-if=""></p> -->
                     </p>
                     <p class="title-section">Voto</p>
-                    <p class="description-section">{{film.vote_average}}</p>
+                    <!-- <p class="description-section">{{film.vote_average}}</p> -->
                         <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)"></i>
                         <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))"></i></p>
 
