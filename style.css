@@ -104,13 +104,52 @@
     border-radius: 2px;
 }
 
-.elencoFilm, .elencoSerie{
+.cardFilm, .cardSerie{
     margin:5px;
-    width: 200px;
+    width: 300px;
+    height: 200px;
     border-radius: 2%;
     background-color: black;
     color:#ffffff99;
+    background-color: transparent;
+    perspective: 1000px;
 
+}
+
+.card-inner{
+    position: relative;
+     width: 100%;
+     height: 100%;
+     transition: transform 0.8s;
+     transform-style: preserve-3d;
+}
+
+.cardFilm:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.cardSerie:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.card-front img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .title-section{
@@ -166,11 +205,6 @@ text-align: center;
     text-align: center;
 }
 
-.poster{
-    border-radius: 2%;
-    width: 200px;
-
-}
 
 #ricercaHeader {
     text-align: center;
@@ -179,12 +213,4 @@ text-align: center;
 .controlliRicerca{
     width: 100%;
     text-align: center;
-}
-
-.description-section {
-    opacity:0;
-}
-
-.description-section:hover {
-    opacity:1;
 }
