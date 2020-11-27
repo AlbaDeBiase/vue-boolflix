@@ -97,8 +97,8 @@
 
 .cardFilm, .cardSerie {
     margin:5px;
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 350px;
     border-radius: 2%;
     background-color: black;
     color:#ffffff99;
@@ -141,7 +141,7 @@
     background-color: #241f1c;
     color: white;
     transform: rotateY(180deg);
-    overflow-y: scroll;
+    overflow-y:auto;
 }
 
 .title-section {
@@ -165,8 +165,8 @@
     margin:15px;
     border-radius: 5%;
     background-color: pink;
-    width: 350px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
 }
