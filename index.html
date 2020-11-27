@@ -21,8 +21,17 @@
                         <li>Nuovi e popolari</li>
                         <li>La mia lista</li>
                     </ul>
-                    <input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film e serie tv" @keyup.enter="Searchfilm" v-model="search">
-                    <button id="bottoneRicerca" type="button" name="bottoneRicerca" @click="Searchfilm()">Clicca qui</button>
+
+                    <ul class="navbar-right">
+                        <li><button id="bottoneRicerca" type="button" name="bottoneRicerca" @click="Searchfilm()"><i class="fas fa-search"></i></button>
+                        </li>
+                        <li><input class="barraRicerca"type="search" name="" value="" placeholder="Cerca film e serie tv" @keyup.enter="Searchfilm" v-model="search"></li>
+                        <li>BAMBINI</li>
+                        <li><i class="fas fa-gift"></i></li>
+                        <li><i class="fas fa-bell"></i></li>
+                        <li><img src="icona/avatar.png" alt="avatar"></li>
+                        <li><i class="fas fa-caret-down"></i></li>
+                    </ul>
                 </div>
                 <div class="controlliRicerca">
                     <h3 id="ricercaHeader" v-if="ricercaIncorso">
