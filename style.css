@@ -1,14 +1,12 @@
-#row{
+#row {
     min-height: 100vh;
     background-color:  #241f1c;
-
 }
 
-#container{
+#container {
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 
 .headerSearch {
@@ -16,30 +14,24 @@
     height: 80px;
     background-color: #241f1c;
     position:relative;
-
-
 }
 
-#logo{
+#logo {
     width:150px;
-
-
 }
 
 .navbar-header {
     list-style-type: none;
     display: inline;
-
 }
 
-.navbar-header li{
+.navbar-header li {
     display:inline;
     color:white;
     padding: 5px;
-
 }
 
-.navbar-header li:hover{
+.navbar-header li:hover {
     opacity:0.5;
     transition: 1s;
 }
@@ -51,7 +43,7 @@
     color:white;
     border:none;
     color:white;
-    }
+}
 
 
 #bottoneRicerca {
@@ -61,15 +53,13 @@
     background-color: #241f1c;
     border: none;
     color: white;
-
 }
-#bottoneRicerca:hover{
 
-
+#bottoneRicerca:hover {
 }
-.controlliRicerca{
+
+.controlliRicerca {
     color: white;
-
 }
 
 .controlliRicerca h3 {
@@ -84,27 +74,28 @@
     top: 25px;
     right: 32px;
 }
-.navbar-right li{
+
+.navbar-right li {
     color:white;
     list-style-type: none;
     display:inline;
     margin-left: 24px;
 }
+
 .navbar-right{
     margin-left:0;
 }
 
-
-.navbar-right li i{
+.navbar-right li i {
     font-size: 20px;
 }
 
-.navbar-right li img{
+.navbar-right li img {
     width: 33px;
     border-radius: 2px;
 }
 
-.cardFilm, .cardSerie{
+.cardFilm, .cardSerie {
     margin:5px;
     width: 300px;
     height: 200px;
@@ -116,95 +107,92 @@
 
 }
 
-.card-inner{
+.card-inner {
     position: relative;
-     width: 100%;
-     height: 100%;
-     transition: transform 0.8s;
-     transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
 .cardFilm:hover .card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .cardSerie:hover .card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
 }
 
-.card-front img{
+.card-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 .card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
+    background-color: #241f1c;
+    color: white;
+    transform: rotateY(180deg);
+    overflow-y: scroll;
 }
 
-.title-section{
+.title-section {
     font-size: 18px;
     text-align: center;
     font-weight: bold;
     font-family: arial;
 }
 
-.title-section:first-child{
+.title-section:first-child {
     padding-top:20px;
 }
 
-.description-section{
+.description-section {
     font-size: 16px;
     text-align: center;
     font-family: arial;
 }
 
-.notFound{
+.notFound {
     margin:15px;
     border-radius: 5%;
     background-color: pink;
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 250px;
     display: flex;
     justify-content: center;
 }
 
-.notFound h1{
+.notFound h1 {
     font-size: 30px;
     font-family: arial;
     font-weight: bold;
     align-self: center;
 }
 
-.stars{
-text-align: center;
-
+.stars {
+    text-align: center;
 }
 
-.stars i{
+.stars i {
     color:yellow;
 }
 
-.flags img{
+.flags img {
     width: 40px;
-
-
 }
 
 .flags {
     text-align: center;
 }
-
 
 #ricercaHeader {
     text-align: center;

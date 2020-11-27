@@ -21,7 +21,7 @@
                         <li>Nuovi e popolari</li>
                         <li>La mia lista</li>
                     </ul>
-
+<!-- fine header-left -->
                     <ul class="navbar-right">
                         <li><button id="bottoneRicerca" type="button" name="bottoneRicerca" @click="Searchfilm()"><i class="fas fa-search"></i></button>
                         </li>
@@ -43,45 +43,24 @@
                     <h3 v-else-if="testoTitolo">nessun risultato: "{{testoTitolo}}"
                     </h3>
                 </div>
-
+<!-- fine header-right -->
                 <div class="cardFilm" v-for="(film,index) in elencofilm" >
                     <div class="card-inner">
                         <div class="card-front">
                             <img class="poster" v-if="film.poster_path"  :src="urlBasePoster + 'w342' + film.poster_path" alt="immagine non trovata">
                             <img class="poster" v-else :src="immagine" alt="">
                         </div>
-                        <div class="card-back"><p class="title-section">Titolo della serie</p>
-                        <p class="description-section">{{serie.name}}</p>
-                        <p class="title-section">Titolo originale della serie</p>
-                        <p class="description-section">{{serie.original_name}}</p>
-                        <p class="title-section">Lingua originale</p>
-                        <p class="description-section">{{serie.original_language}}</p> -->
-                         <p class="flags">
-                            <img :src="'flags/' + serie.original_language + '.png'"  :alt="serie.original_language"
-                            v-if="flags.includes(serie.original_language)">
-                            <span v-else>{{ serie.original_language }}</span>
-                        </p>
-                        <p class="title-section">Voto</p>
-                        <p class="description-section">{{serie.vote_average}}</p>
-                         <p class="stars"><i class="fas fa-star" v-for="i in getStars(serie.vote_average)"></i>
-                            <i class="far fa-star" v-for="i in (5 - getStars(serie.vote_average))"></i></p>
-                            <p class="overview">{{serie.overview}}</p>
+                        <div class="card-back">
                             <p class="description-section">{{film.title}}</p>
-                            <p class="title-section">Titolo originale del film</p>
                             <p class="description-section">{{film.original_title}}</p>
-                            <p class="title-section">Lingua originale</p>
-                            <!-- <p class="description-section">{{film.original_language}}</p> -->
                             <p class="flags">
                                 <img  :src="'flags/' + film.original_language + '.png'" :alt="film.original_language"
                                 v-if="flags.includes(film.original_language)">
                                 <span v-else>{{ film.original_language}}</span>
-                                <!-- <p v-else-if=""></p> -->
                             </p>
-                            <p class="title-section">Voto</p>
-                            <!-- <p class="description-section">{{film.vote_average}}</p> -->
-                                <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)"></i>
-                                    <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))"></i></p>
-                                <p class="overview">{{film.overview}}</p>
+                            <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)"></i>
+                                <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))"></i></p>
+                            <p class="overview">{{film.overview}}</p>
                         </div>
                     </div>
                 </div>
@@ -93,18 +72,14 @@
                             <img class="poster" v-else :src="immagine" alt="">
                         </div>
                         <div class="card-back">
-                            <p class="title-section">Titolo della serie</p>
                             <p class="description-section">{{serie.name}}</p>
-                            <p class="title-section">Titolo originale della serie</p>
                             <p class="description-section">{{serie.original_name}}</p>
-                            <p class="title-section">Lingua originale</p>
                             <p class="description-section">{{serie.original_language}}</p> -->
-                             <p class="flags">
+                            <p class="flags">
                                 <img :src="'flags/' + serie.original_language + '.png'"  :alt="serie.original_language"
                                 v-if="flags.includes(serie.original_language)">
                             <span v-else>{{ serie.original_language }}</span>
                             </p>
-                            <p class="title-section">Voto</p>
                             <p class="description-section">{{serie.vote_average}}</p>
                             <p class="stars"><i class="fas fa-star" v-for="i in getStars(serie.vote_average)"></i>
                                 <i class="far fa-star" v-for="i in (5 - getStars(serie.vote_average))"></i></p>
@@ -112,9 +87,8 @@
                         </div>
                     </div>
                 </div>
-
-
+            </div>
         </div>
-    <script src="main.js" charset="utf-8"></script>
+            <script src="main.js" charset="utf-8"></script>
     </body>
 </html>
