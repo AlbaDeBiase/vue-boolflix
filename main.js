@@ -1,10 +1,3 @@
-// Milestone 1
-//Milestone 2
-// 1- sostituire il voto numerico su base 10 in un voto su base 5
-//  e visualizzare in totale 5 stelline,
-//  di cui tante piene quanto è il voto arrotondato
-//  (non gestiamo stelline a metà).
-//  Ad esempio, se il voto è 8.2, dobbiamo visualizzare 4 stelline piene e 1 stellina vuota (in totale sempre 5)
 
 var app = new Vue ({
     el:'#row',
@@ -61,7 +54,7 @@ var app = new Vue ({
                     }
                 })
                 .then((serie) => {
-                    //cerco i film nella sezione serie
+                    //cerco le serie nella sezione serie
                     this.elencoSerie= (serie.data.results);
                     console.log(this.elencoSerie);
                     this.ricercaIncorso=false;
@@ -94,6 +87,7 @@ var app = new Vue ({
 
             return Math.floor(vote/ 2);
         },
+
 
 
     }//chiudo methods

@@ -51,16 +51,17 @@
                             <img class="poster" v-else :src="immagine" alt="">
                         </div>
                         <div class="card-back">
-                            <p class="description-section">{{film.title}}</p>
+                            <p class="title-section">{{film.title}}</p>
                             <p class="description-section">{{film.original_title}}</p>
                             <p class="flags">
                                 <img  :src="'flags/' + film.original_language + '.png'" :alt="film.original_language"
                                 v-if="flags.includes(film.original_language)">
-                                <span v-else>{{ film.original_language}}</span>
+                                <span class="language-section" v-else>{{ film.original_language}}</span>
                             </p>
                             <p class="stars"><i class="fas fa-star" v-for="i in getStars(film.vote_average)"></i>
                                 <i class="far fa-star" v-for="i in (5 - getStars(film.vote_average))"></i></p>
                             <p class="overview">{{film.overview}}</p>
+                            <p>{{film.genre_ids}}</p>
                         </div>
                     </div>
                 </div>
@@ -72,15 +73,13 @@
                             <img class="poster" v-else :src="immagine" alt="">
                         </div>
                         <div class="card-back">
-                            <p class="description-section">{{serie.name}}</p>
+                            <p class="title-section">{{serie.name}}</p>
                             <p class="description-section">{{serie.original_name}}</p>
-                            <p class="description-section">{{serie.original_language}}</p> -->
                             <p class="flags">
                                 <img :src="'flags/' + serie.original_language + '.png'"  :alt="serie.original_language"
                                 v-if="flags.includes(serie.original_language)">
-                            <span v-else>{{ serie.original_language }}</span>
+                            <span class="language-section" v-else>{{ serie.original_language }}</span>
                             </p>
-                            <p class="description-section">{{serie.vote_average}}</p>
                             <p class="stars"><i class="fas fa-star" v-for="i in getStars(serie.vote_average)"></i>
                                 <i class="far fa-star" v-for="i in (5 - getStars(serie.vote_average))"></i></p>
                             <p class="overview">{{serie.overview}}</p>
