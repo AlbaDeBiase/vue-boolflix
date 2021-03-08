@@ -221,3 +221,25 @@
     width: 100%;
     text-align: center;
 }
+
+.fa-home:before {
+    content: "\f015";
+    display:none;
+}
+
+
+
+/* ----inizio mediaquery------ */
+
+
+@media screen and (max-width: 1200px) {
+    .navbar-header .hidden{
+        display: none;
+    }
+    .fa-home:before {
+        content: "\f015";
+        display:inline;
+        color:white;
+        font-size:20px;
+    }
+}
